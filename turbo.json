@@ -4,18 +4,25 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["./dist/**"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
     },
     "lint": {
       "dependsOn": ["^lint"]
     },
-    "check-types": {
-      "dependsOn": ["^check-types"]
-    },
-    "dev": {
+    "backend#start:dev": {
+      "dependsOn": [],
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "outputs": ["./dist/**"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
+    },
+    "frontend#dev": {
+      "dependsOn": [],
+      "cache": false,
+      "persistent": true,
+      "outputs": ["./dist/**"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
     }
   }
 }
