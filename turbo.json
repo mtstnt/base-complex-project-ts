@@ -10,6 +10,9 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
+    "dev": {
+      "dependsOn": ["backend#start:dev", "frontend#dev"]
+    },
     "backend#start:dev": {
       "dependsOn": [],
       "cache": false,
